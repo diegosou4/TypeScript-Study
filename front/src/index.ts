@@ -1,4 +1,4 @@
-import funcao from './mod' 
+
 import isEmail from 'validator/lib/isEmail';
 
 
@@ -63,16 +63,18 @@ function validForm(): void
     }
 }
 
-function btnsummit(): void
+
+
+function formsummit(): void
 {
-    const button: HTMLButtonElement | null = document.querySelector('button');
-    if(button === null)
+    const form: HTMLButtonElement | null = document.querySelector('.form');
+    if(form === null)
         return;
 
-    button.addEventListener('click', (event: Event) => {
+    form.addEventListener('submit', (event: Event) => {
         event.preventDefault();
         validForm();
     });
 }
 
-btnsummit();
+formsummit();
