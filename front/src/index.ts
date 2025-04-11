@@ -49,7 +49,7 @@ function comparePass(): boolean {
 
 function validForm(): void
 {
-    const erroclass: HTMLElement[] = Array.from(document.querySelectorAll('.error-message')) as HTMLElement[];
+    const erroclass: HTMLElement[] = Array.from(document.querySelectorAll('.form-fields')) as HTMLElement[];
     const arrayFuctions: boolean[] = [validUsername(), validEmail(), validPass(), comparePass()];
     if(erroclass === null)
         return;
@@ -57,9 +57,9 @@ function validForm(): void
     for(let i = 0; i < erroclass.length; i++)
     {
         if(arrayFuctions[i] === false)
-            erroclass[i].style.display = 'block';
+            erroclass[i].classList.add('show-error-message');
         else
-            erroclass[i].style.display = 'none';
+            erroclass[i].classList.remove('show-error-message');
     }
 }
 
