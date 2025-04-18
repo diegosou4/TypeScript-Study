@@ -1,104 +1,105 @@
-:root {
-    --dark-color: #111;
-    --light-color: #f3f3f3;
-    --medium-color: #bbb;
-    --border-color: #ddd;
-    --main-color: #0074D9;
-    --error-color: #FF4136;
-    --border-radius: 4px;
+body,
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#header {
+  box-sizing: border-box;
+  height: 70px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e7e7e7;
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+}
+
+#btn-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: #e7e7e7;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
   }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
   }
-  
-  body {
-    background-color: var(--dark-color);
-    font-family: sans-serif;
-    color: var(--dark-color);
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
   }
-  
-  .container {
+  #btn-mobile {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 50px auto;
-  }
-  
-  .form {
-    padding: 20px;
-    background: #fff;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    margin: auto 20px;
-  }
-  
-  .form h2 {
-    padding: 10px 0 30px;
-    text-align: center;
-  }
-  
-  .form .form-fields {
-    margin: 0 0 20px;
-  }
-  
-  .form label {
-    display: block;
-    font-size: 10pt;
-    color: #999;
-  }
-  
-  ::placeholder {
-    color: #ddd;
-    font-size: 10pt;
-  }
-  
-  .form input[type] {
-    width: 100%;
-    border: 1px solid var(--border-color);
-    font-size: 18px;
-    padding: 5px 10px;
-    border-radius: var(--border-radius);
-    transition: border 300ms ease-in-out;
-  }
-  
-  .form input[type]:focus {
-    border-color: var(--medium-color);
-  }
-  
-  .form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
     border: none;
-    background: var(--main-color);
-    padding: 10px 20px;
+    background: none;
     cursor: pointer;
-    font-weight: 700;
-    color: var(--light-color);
-    border-radius: var(--border-radius);
-    transition: filter 300ms ease-in-out;
+    gap: 0.5rem;
   }
-  
-  .form button:hover {
-    filter: brightness(80%);
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
   }
-  
-  .form .error-message {
-    font-size: 9pt;
-    padding: 5px 0;
-    color: var(--error-color);
-    font-style: italic;
-    display: none;
-  }
-  
-  .form .show-error-message .error-message {
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
     display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
   }
-  
-  .form .show-error-message input[type] {
-    border-color: var(--error-color);
+  #nav.active #hamburger {
+    border-top-color: transparent;
   }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}

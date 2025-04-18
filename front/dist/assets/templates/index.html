@@ -7,36 +7,31 @@
   <title>Faça seu registro</title>
   <link rel="stylesheet" href="./../css/style.css">
 </head>
+<style>
+  body {
+    font-size: 1.25rem;
+    font-family: sans-serif;
+    margin: 2rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    min-width: 50vw;
+    max-width: 100%;
+  }
+</style>
+
+
 
 <body>
-  <div class="container">
-    <form action="" id="form" class="form">
-      <h2>Faça seu cadastro</h2>
-      <div class="form-fields">
-        <label for="username">Seu usuário</label>
-        <input type="text" name="username" class="username" id="username" placeholder="Seu usuário">
-        <span class="error-message">Usuario Invalido.</span>
-      </div>
-      <div class="form-fields">
-        <label for="email">Seu e-mail</label>
-        <input type="email" name="email" class="email" id="email" placeholder="Seu e-mail">
-        <span class="error-message">Email Invalido.</span>
-      </div>
-      <div class="form-fields">
-        <label for="username">Sua senha</label>
-        <input type="password" name="password" class="password" id="password" placeholder="Sua senha">
-        <span class="error-message">Password Invalida.</span>
-      </div>
-      <div class="form-fields">
-        <label for="username">Repetir senha</label>
-        <input type="password" name="password2" class="password2" id="password2" placeholder="Repetir senha">
-        <span class="error-message">As duas password precisam ser iguais.</span>
-      </div>
-      <div class="form-fields">
-        <button type="submit">Enviar</button>
-      </div>
-    </form>
-  </div>
+
 
   <script src="./../js/bundle.js"></script>
 </body>
