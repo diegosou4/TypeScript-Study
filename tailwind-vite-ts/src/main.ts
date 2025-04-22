@@ -1,4 +1,5 @@
-import "./style.css";
+import "./style.css"
+
 
 
 export default function hello(): void{
@@ -7,3 +8,5 @@ export default function hello(): void{
 }
 
 hello();
+
+

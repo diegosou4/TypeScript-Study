@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+:root {
+    --color-origamid-500: #a378ff;
+    --color-origamid-400: #b596f8;
+    --color-origamid-300: #d8c9f7;
+    --color-verde-900: #16281f;
+    --color-verde-950: #0f1c15;
+
+    --breakpoint-xs: 380px;
+  }

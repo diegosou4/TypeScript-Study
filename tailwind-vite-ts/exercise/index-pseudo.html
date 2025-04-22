@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind + Vite + TS</title>
+</head>
+
+<body class="m-8">
+  <button class="bg-blue-400 hover:bg-blue-200 active:bg-blue-300 text-blue-950 border-2 border-blue-200 rounded-md py-2 px-4">Comprar Produto</button>
+  <div class="mt-4">
+    <input type="text" class="border-2 border-gray-200 bg-gray-100 rounded-md p-2 focus:outline-cyan-400"/>
+    <button class="bg-blue-400 hover:bg-blue-200 active:bg-blue-300 text-blue-950 border-2 border-blue-200 rounded-md py-2 px-4 hover:disabled:bg-blue-400 disabled:grayscale" disabled>Enviar</button>
+  </div>
+  <ol class="mt-4 list-decimal ">
+    <li class="odd:bg-gray-100 even:bg-gray-300">Marta</li>
+    <li class="odd:bg-gray-100 even:bg-gray-300">Nina</li>
+    <li class="odd:bg-gray-100 even:bg-gray-300">Maria</li>
+    <li class="odd:bg-gray-100 even:bg-gray-300">Marta</li>
+    <li class="odd:bg-gray-100 even:bg-gray-300">Mara</li>
+    <li class="odd:bg-gray-100 even:bg-gray-300">Mila</li>
+  </ol>
+
+
+  <ol class="mt-4 list-decimal odd:*:bg-gray-100 even:*:bg-gray-300 last:*:text-red-600 first:*:text-green-600">
+    <li >Marta</li>
+    <li>Nina</li>
+    <li>Maria</li>
+    <li>Marta</li>
+    <li>Mara</li>
+    <li>Mila</li>
+  </ol>
+</body>
+<script type="module" src="/src/main.ts"></script>
+
+</html>
+

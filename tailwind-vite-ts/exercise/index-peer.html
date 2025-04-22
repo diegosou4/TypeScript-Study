@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind + Vite + TS</title>
+</head>
+
+<body class="m-8 bg-white">
+  <div class="flex flex-col gap-4">
+    <p class="uppercase font-bold font-sans text-lg mb-3 tracking-tight">Escolha a sua</p>
+    <div>
+      <input type="radio" name="produto" value="nimbus" id="nimbus" class="peer" />
+      <label for="nimbus"
+        class="bg-gray-100 peer-checked:bg-gray-400 rounded p-2 inline-grid grid-cols-[200px_auto] cursor-pointer">Nimbus Stark
+        <span class="font-semibold">R$4999</span></label>
+      <ul class="bg-gray-100 w-96 rounded-md ml-5 p-1 mt-2 hidden peer-checked:block">
+        <li>Motor Elétrico</li>
+        <li>Fibra de Carbono</li>
+        <li>50 km/h</li>
+        <li>Rastreador</li>
+      </ul>
+    </div>
+    <div>
+      <input type="radio" name="produto" value="nimbus" id="magic" class="peer" />
+      <label for="magic"
+        class="bg-gray-100 peer-checked:bg-gray-400 rounded p-2 inline-grid grid-cols-[200px_auto] cursor-pointer">Magic Migth <span class="font-semibold">R$
+          2499</span></label>
+      <ul class="bg-gray-100 w-96 rounded-md ml-5 p-1 mt-2 hidden peer-checked:block">
+        <li>Motor Elétrico</li>
+        <li>Fibra de Carbono</li>
+        <li>30 km/h</li>
+        <li>Rastreador</li>
+      </ul>
+    </div>
+    <div>
+      <input type="radio" name="produto" value="nimbus" id="nebula" class="peer" />
+      <label for="nebula"
+        class="bg-gray-100 peer-checked:bg-gray-400 rounded p-2 inline-grid grid-cols-[200px_auto] cursor-pointer">Nebula Cosmic
+        <span class="font-semibold">R$
+          3999</span></label>
+      <ul class="bg-gray-100 w-96 rounded-md ml-5 p-1 mt-2 hidden peer-checked:block">
+        <li>Motor Elétrico</li>
+        <li>Fibra de Carbono</li>
+        <li>40 km/h</li>
+        <li>Rastreador</li>
+      </ul>
+    </div>
+  </div>
+
+  </div>
+
+
+
+</body>
+<script type="module" src="/src/main.ts"></script>
+
+</html>
