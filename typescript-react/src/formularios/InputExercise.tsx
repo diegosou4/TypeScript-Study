@@ -24,14 +24,16 @@ type dados = {
   senha?: string;
   cep?: string;
   rua?: string;
-  numero?: number;
+  numero?: string;
   bairro?: string;
   cidade?: string;
   estado?: string;
+  [key: string]: string | number | undefined;
 };
 
 const InputExercise = () => {
   const [form, setForm] = React.useState<dados>({});
+  const [response, setResponse] = React.useState<boolean | null >(null);
 
   const FormFields: FormT[] = getForm();
 
@@ -40,6 +42,7 @@ const InputExercise = () => {
     let response;
     let json;
     try {
+        setResponse(null);
       response = await fetch('https://ranekapi.origamid.dev/json/api/usuario', {
         method: 'POST',
         headers: {
@@ -48,14 +51,11 @@ const InputExercise = () => {
         body: JSON.stringify(form),
       });
       if (!response.ok) {
-        if (response.status === 403) {
-          console.error('Erro 403: Acesso proibido');
-        } else {
-          console.error(`Erro HTTP ${response.status}`);
-        }
+        setResponse(false);
         throw new Error('Deu ruim papai');
       }
       json = await response.json();
+        setResponse(true);
       console.log(json);
     } catch (error) {
       console.log(error);
@@ -80,7 +80,7 @@ const InputExercise = () => {
               id={id}
               name={id}
               className="bg-white rounded-sm ml-2 border-1"
-              value={form[id] || ''}
+              value={form[id]}
               onChange={handleChange}
             />
           </div>
@@ -89,6 +89,7 @@ const InputExercise = () => {
           Enviar
         </button>
       </form>
+        {response === true && <p className="text-black text-2xl font-medium">Dados enviados com sucesso!</p>}
     </div>
   );
 };
