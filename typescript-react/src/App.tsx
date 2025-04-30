@@ -1,26 +1,18 @@
 
 import './App.css'
-import React from 'react';
-import Produto from './content/Produto'
-import { GlobalStorage } from './content/GlobalContext';
-
+import InputExercise from  './formularios/InputExercise'
 
 function App() {
   
+  
+
   return (
     <>
-      <div>
-          <GlobalStorage>
-            <Produto/>
-          </GlobalStorage>
-
-      </div>
+      <InputExercise></InputExercise>
     </>
     
   )
 }
-
-
 
 
 export default App
