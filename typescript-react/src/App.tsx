@@ -1,14 +1,30 @@
 
 import './App.css'
-import InputExercise from  './formularios/InputExercise'
+import React from "react";
+import Input from './Form/InputComp'
+
 
 function App() {
-  
-  
+  const [cep,setCep] = React.useState<string>('');
+
+  function handleBlur(event){
+    console.log(event.target.value);
+  }
 
   return (
     <>
-      <InputExercise></InputExercise>
+    <form>
+      <Input 
+      type='text' 
+      label='CEP'
+      id='cep'  
+      setValue={setCep} 
+      value={cep} 
+      placeholder='0000-000' 
+      onBlur={handleBlur}
+      />
+    
+    </form>
     </>
     
   )
