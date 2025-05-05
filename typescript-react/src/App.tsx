@@ -1,30 +1,24 @@
 
 import './App.css'
-import React from "react";
-import Input from './Form/InputComp'
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './routes/Home';
+import Produto from './routes/Produto';
+import Contato from './routes/Contato';
 
 function App() {
-  const [cep,setCep] = React.useState<string>('');
-
-  function handleBlur(event){
-    console.log(event.target.value);
-  }
 
   return (
     <>
-    <form>
-      <Input 
-      type='text' 
-      label='CEP'
-      id='cep'  
-      setValue={setCep} 
-      value={cep} 
-      placeholder='0000-000' 
-      onBlur={handleBlur}
-      />
+    <BrowserRouter>
+      <Routes>
+          <Route path="" element={<Home/>}></Route>
+          <Route path="/produtos/:id" element={<Produto/>}></Route>
+          <Route path="/contato/" element={<Contato/>}></Route>
+      </Routes>
     
-    </form>
+    </BrowserRouter>
+ 
     </>
     
   )
